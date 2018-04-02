@@ -1,0 +1,21 @@
+net: "train_resnet18_r2.prototxt"
+#test_iter: 100
+#test_state: { stage: 'test-on-train' }
+#test_iter: 100
+#test_state: { stage: 'test-on-val' }
+test_interval: 0
+base_lr: 0.01
+momentum: 0.9
+weight_decay: 0.00005
+lr_policy: "step"
+gamma: 0.1
+# (440489/24)*5 = 91768 (~90000)
+stepsize: 90000
+# Display every 20 iterations
+display: 20
+# The maximum number of iterations
+max_iter: 360000
+# snapshot intermediate results
+snapshot: 2000
+snapshot_prefix: "c3d_resnet18_ucf101_r2_ft"
+solver_mode: GPU
